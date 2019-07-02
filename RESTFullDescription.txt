@@ -1,0 +1,32 @@
+RestFull HR (Human Resource)
+-----------------------------------------------
+RestFull Department:
+http://localhost:8080/departments
+POST (Create)
+{"departmentName":"Financial"}
+
+GET (Read)
+{"departmentId":1}
+
+PUT (Update)
+{"departmentId":1,"departmentName":"Accounting"}
+
+DELETE (Delete)
+{"departmentId":1}
+
+-------------------
+RestFull Employee:
+http://localhost:8080/employees
+POST (Create)
+{"firstName":"John","lastName":"Smith","birthday":"16.05.2001","departmentId":1}
+
+GET (Read)
+{"employeeId":1}
+
+PUT (Update)
+{"firstName":"Joe","lastName":"Thomson","birthday":"12.07.2002","departmentId": 1}
+
+DELETE (Delete)
+{"employeeId":1}
+-------------------------------------------------
+
