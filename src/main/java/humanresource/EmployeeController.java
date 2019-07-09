@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.*;
 public class EmployeeController {
     private final EmployeeRepository employeeRepository;
 
-    public EmployeeController(EmployeeRepository repository) {
-        this.employeeRepository = repository;
+    public EmployeeController(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
     }
 
     @PostMapping("/employees")
-    Employee newEmployee(@RequestBody Employee employee) {
+    public Employee newEmployee(@RequestBody Employee employee) {
         return employeeRepository.save(employee);
     }
 

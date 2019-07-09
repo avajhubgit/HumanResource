@@ -2,7 +2,6 @@ package humanresource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.RequestHandler;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -16,7 +15,7 @@ public class SwaggerConfig {
     public Docket apiDocket() {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.hr"))
+                .apis(RequestHandlerSelectors.basePackage("humanresource"))
                 .paths(PathSelectors.any())
                 .build();
         return docket;
