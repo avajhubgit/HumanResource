@@ -2,6 +2,8 @@ package humanresource;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class DepartmantController {
     private final DepartmentRepository departmentRepository;
@@ -15,6 +17,13 @@ public class DepartmantController {
         return departmentRepository.save(department);
     }
 
+    //a lot of departments
+    @GetMapping("/departments")
+    public List<Department> all() {
+        return departmentRepository.findAll();
+    }
+
+    //single department
     @GetMapping("/departments/{id}")
     public Department getDepartment(@PathVariable Long id) {
         return departmentRepository.findById(id)

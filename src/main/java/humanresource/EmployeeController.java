@@ -2,6 +2,8 @@ package humanresource;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class EmployeeController {
     private final EmployeeRepository employeeRepository;
@@ -15,6 +17,13 @@ public class EmployeeController {
         return employeeRepository.save(employee);
     }
 
+    //a lot of employees
+    @GetMapping("/emloyees")
+    public List<Employee> all() {
+        return employeeRepository.findAll();
+    }
+
+    //single emplyee
     @GetMapping("/employees/{id}")
     public Employee getEmployee(@PathVariable Long id) {
         return employeeRepository.findById(id)
